@@ -27,7 +27,7 @@ installer() {
     rm 00-header 10-help-text 50-landscape-sysinfo 50-motd-news 90-updates-available 91-release-upgrade 92-unattended-upgrades 97-overlayroot
     echo "# Successfully removed default text. Installing NeoFetch..."
     sleep 2s
-    apt install neofetch
+    sudo apt install neofetch
     sudo bash -c $'echo "neofetch" >> /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
     warning "Successfully installed NeoFetch on your machine and put it as your MOTD."
 }
