@@ -28,8 +28,11 @@ installer() {
     echo "# Successfully removed default text. Installing NeoFetch..."
     sleep 2s
     apt install neofetch
+    echo "# Checking for duplicates..."
+    true > /etc/profile.d/mymotd.sh
     sudo bash -c $'echo "neofetch" >> /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
-    warning "Successfully installed NeoFetch on your machine and put it as your MOTD."
+    echo "# Successfully installed NeoFetch on your machine and put it as your MOTD."
+    echo "# Enjoy!"
 }
 
 sleep 1s
