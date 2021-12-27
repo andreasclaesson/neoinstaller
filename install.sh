@@ -17,7 +17,7 @@ warning(){
 }
 
 if [[ $EUID -ne 0 ]]; then
-  echo "# To avoid any possible errors, this script needs to be run with sudo/root."
+  echo "# To avoid any possible errors, this script needs to be run with sudo/root. (sudo su)"
   exit 1
 fi
 
@@ -27,6 +27,7 @@ installer() {
     rm 00-header 10-help-text 50-landscape-sysinfo 50-motd-news 90-updates-available 91-release-upgrade 92-unattended-upgrades 97-overlayroot
     echo "# Successfully removed default text. Installing NeoFetch..."
     sleep 2s
+    apt update
     apt install neofetch -y
     echo "# Checking for duplicates..."
     true > /etc/profile.d/mymotd.sh
